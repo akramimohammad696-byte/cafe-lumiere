@@ -69,7 +69,9 @@ class CafeHandler(SimpleHTTPRequestHandler):
         self.send_error(404)
 
 
-server = HTTPServer(("127.0.0.1", 8080), CafeHandler)
+import os
+PORT = int(os.environ.get("PORT", "8080"))
+server = HTTPServer(("0.0.0.0", PORT), CafeHandler)
 
 print(f"☕ {CAFE_NAME} is running...")
 print(f"Server running on port {PORT}")
