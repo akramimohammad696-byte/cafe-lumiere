@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Lumière | Kaffee & Genuss</title>
+    <style>:root { --primary-color: PRIMARY_COLOR_VALUE; --background-color: BACKGROUND_COLOR_VALUE; }</style>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">☕ Café Lumière</div>
+
+    <nav>
+        <a href="#home">Start</a>
+        <a href="#menu">Menü</a>
+        <a href="#about">Über uns</a>
+        <a href="#contact">Kontakt</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+        <span class="eyebrow">CAFÉ • KAFFEE • GENUSS</span>
+
+        <h1>Ein guter Tag<br>beginnt mit Kaffee.</h1>
+
+        <p>
+            Frisch gerösteter Kaffee, hausgemachte Kuchen
+            und eine gemütliche Atmosphäre.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#menu" class="button primary">Unsere Speisekarte</a>
+            <a href="#contact" class="button">Besuchen Sie uns</a>
+        </div>
+    </div>
+
+</section>
+
+<section id="menu" class="section">
+    <span class="eyebrow">UNSERE FAVORITEN</span>
+    <h2>Für jeden Moment etwas Besonderes</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">☕</div>
+            <h3>Premium Kaffee</h3>
+            <p>Frisch zubereitet mit sorgfältig ausgewählten Bohnen.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🥐</div>
+            <h3>Frisches Gebäck</h3>
+            <p>Knusprige Croissants und hausgemachte Spezialitäten.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🍰</div>
+            <h3>Hausgemachte Kuchen</h3>
+            <p>Mit Liebe gebacken und jeden Tag frisch serviert.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="full-menu" id="full-menu">
+
+    <div class="section-heading">
+        <span class="eyebrow">CAFÉ LUMIÈRE</span>
+        <h2>Unsere Speisekarte</h2>
+        <p>Frisch zubereitet. Einfach genießen.</p>
+    </div>
+
+    <div class="menu-category">
+        <h3>☕ Kaffee</h3>
+
+        <div class="menu-row">
+            <div>
+                <strong>Espresso</strong>
+                <span>Kräftig und aromatisch</span>
+            </div>
+            <b>2,40 €</b>
+        </div>
+
+        <div class="menu-row">
+            <div>
+                <strong>Cappuccino</strong>
+                <span>Espresso mit cremigem Milchschaum</span>
+            </div>
+            <b>3,80 €</b>
+        </div>
+
+        <div class="menu-row">
+            <div>
+                <strong>Café Latte</strong>
+                <span>Sanft, cremig und ausgewogen</span>
+            </div>
+            <b>4,20 €</b>
+        </div>
+    </div>
+
+    <div class="menu-category">
+        <h3>🥐 Frühstück</h3>
+
+        <div class="menu-row">
+            <div>
+                <strong>Butter Croissant</strong>
+                <span>Frisch aus dem Ofen</span>
+            </div>
+            <b>2,90 €</b>
+        </div>
+
+        <div class="menu-row">
+            <div>
+                <strong>Avocado Toast</strong>
+                <span>Sauerteigbrot, Avocado und Kräuter</span>
+            </div>
+            <b>8,90 €</b>
+        </div>
+    </div>
+
+    <div class="menu-category">
+        <h3>🍰 Kuchen & Desserts</h3>
+
+        <div class="menu-row">
+            <div>
+                <strong>Hausgemachter Kuchen</strong>
+                <span>Täglich wechselnde Auswahl</span>
+            </div>
+            <b>4,20 €</b>
+        </div>
+
+        <div class="menu-row">
+            <div>
+                <strong>Cheesecake</strong>
+                <span>Cremig und hausgemacht</span>
+            </div>
+            <b>4,50 €</b>
+        </div>
+    </div>
+
+</section>
+
+<section id="about" class="about">
+    <div>
+        <span class="eyebrow">ÜBER UNS</span>
+        <h2>Willkommen im Café Lumière.</h2>
+        <p>
+            Ein Ort zum Entspannen, Treffen und Genießen.
+            Ob schneller Espresso am Morgen oder gemütlicher
+            Nachmittag mit Kuchen – bei uns sind Sie willkommen.
+        </p>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <span class="eyebrow">BESUCHEN SIE UNS</span>
+    <h2>Wir freuen uns auf Sie.</h2>
+    <p>📍 Musterstraße 12, Dresden</p>
+    <p>🕐 Mo–So: 08:00–20:00</p>
+    <a href="mailto:hello@cafe-lumiere.de" class="button primary">
+        Kontakt aufnehmen
+    </a>
+</section>
+
+<footer>
+    <p>☕ Café Lumière</p>
+    <p>© 2026 Café Lumière</p>
+</footer>
+
+</body>
+</html>

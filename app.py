@@ -1,0 +1,77 @@
+from http.server import SimpleHTTPRequestHandler, HTTPServer
+from config import (
+    CAFE_NAME,
+    CAFE_TAGLINE,
+    CAFE_EMAIL,
+    CAFE_PHONE,
+    CAFE_ADDRESS,
+    CAFE_HOURS,
+    PRIMARY_COLOR,
+    BACKGROUND_COLOR
+)
+
+class CafeHandler(SimpleHTTPRequestHandler):
+
+    def do_GET(self):
+
+        if self.path in ["/impressum", "/datenschutz"]:
+            filename = self.path.strip("/") + ".html"
+            page = open("templates/" + filename, "r", encoding="utf-8").read()
+
+            data = page.encode("utf-8")
+
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
+            return
+
+        if self.path == "/":
+            page = open("templates/index.html", "r", encoding="utf-8").read()
+
+            page = page.replace("Café Lumière", CAFE_NAME)
+            page = page.replace("PRIMARY_COLOR_VALUE", PRIMARY_COLOR)
+            page = page.replace("BACKGROUND_COLOR_VALUE", BACKGROUND_COLOR)
+            page = page.replace(
+                "Kleine Momente. Großer Genuss.",
+                CAFE_TAGLINE
+            )
+            page = page.replace(
+                "hello@cafe-lumiere.de",
+                CAFE_EMAIL
+            )
+            page = page.replace(
+                "+49 351 1234567",
+                CAFE_PHONE
+            )
+            page = page.replace(
+                "Musterstraße 12<br>01067 Dresden",
+                CAFE_ADDRESS.replace(", ", "<br>")
+            )
+            page = page.replace(
+                "Mo–So<br>08:00–20:00",
+                CAFE_HOURS.replace(" · ", "<br>")
+            )
+
+            data = page.encode("utf-8")
+
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
+            return
+
+        if self.path.startswith("/static/"):
+            return super().do_GET()
+
+        self.send_error(404)
+
+
+server = HTTPServer(("127.0.0.1", 8080), CafeHandler)
+
+print(f"☕ {CAFE_NAME} is running...")
+print(f"Server running on port {PORT}")
+
+server.serve_forever()

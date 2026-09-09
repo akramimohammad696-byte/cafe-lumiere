@@ -1,0 +1,20 @@
+from http.server import SimpleHTTPRequestHandler, HTTPServer
+
+class CafeHandler(SimpleHTTPRequestHandler):
+
+    def do_GET(self):
+        if self.path == "/":
+            self.path = "/templates/index.html"
+            return super().do_GET()
+
+        if self.path.startswith("/static/"):
+            return super().do_GET()
+
+        self.send_error(404)
+
+server = HTTPServer(("127.0.0.1", 8080), CafeHandler)
+
+print("☕ Café Lumière is running...")
+print("http://127.0.0.1:8080")
+
+server.serve_forever()
